@@ -199,7 +199,7 @@ class GbqConnector:
             page_token = query_reply.get('pageToken', None)
 
             if not page_token and current_row < total_rows:
-                raise InvalidPageToken("Required pageToken was missing. Recieved {0} of {1} rows".format(current_row,total_rows))
+                raise InvalidPageToken("Required pageToken was missing. Received {0} of {1} rows".format(current_row,total_rows))
 
             elif page_token in seen_page_tokens:
                 raise InvalidPageToken("A duplicate pageToken was returned")
